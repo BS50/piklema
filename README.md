@@ -17,7 +17,8 @@
 
 ### Запуск приложения:
 * Склонировать проект по [ссылке:](https://github.com/BS50/piklema.git)
-* Установить и активировать переменные окружения;
+* Установить и активировать переменные окружения
+* Создать в корневой директории папку logs
 * `pip install -r requirements.txt` установить зависимости
 * `docker build -t piklema_backend_base -f DockerfileBase .` создать базовый образ
 * `docker compose -f docker-compose.yml up` - запустить проект в контейнере;
