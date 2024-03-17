@@ -1,0 +1,39 @@
+version: '3'
+services:
+    db:
+      container_name: piklema_db
+      image: postgres:13.3
+      restart: always
+      volumes:
+        - ${POSTGRES_DATA_PATH}:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_USER=Piklema
+        - POSTGRES_PASSWORD=piklema
+        - POSTGRES_DB=piklema
+      ports:
+        - ${POSTGRES_PORT}:5432
+    redis:
+      container_name: piklema_redis
+      image: redis
+      restart: always
+      ports:
+        - ${REDIS_PORT}:6379
+    piklemabackend:
+      container_name: piklema_backend
+      build: .
+      restart: always
+      ports:
+        - ${LOCAL_BACKEND_PORT}:8000
+      depends_on:
+        - db
+        - redis
+    processor:
+      container_name: piklema_processor
+      build:
+        context: ${BACKEND_PATH}
+        dockerfile: DockerfileProcessor
+      depends_on:
+        - db
+        - redis
+      volumes:
+        - ${BACKEND_LOGS_PATH}:/app/logs

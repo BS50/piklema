@@ -1,0 +1,14 @@
+FROM python:3.11-bullseye
+
+# update packages
+RUN apt-get -qq update
+RUN apt-get install --yes nano apache2 apache2-dev
+RUN pip install mod_wsgi
+
+RUN mkdir /app
+RUN mkdir /app/logs
+WORKDIR /app
+
+COPY requirements.txt /app
+
+RUN pip install -r requirements.txt

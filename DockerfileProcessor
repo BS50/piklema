@@ -1,0 +1,7 @@
+FROM piklema_backend_base
+
+WORKDIR /app
+
+COPY . /app
+
+CMD python processor_script.py

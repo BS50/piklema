@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  db:
+    container_name: piklema_db
+    image: postgres:13.3
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+  redis:
+    container_name: piklema_redis
+    image: redis
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}

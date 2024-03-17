@@ -1,0 +1,21 @@
+---
+version: 1
+formatters:
+    simple:
+        format: "[%(levelname)s] %(name)s %(asctime)s: %(message)s"
+
+handlers:
+    console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+    file_handler:
+        backupCount: 30
+        encoding: utf-8
+        filename: "./logs/piklema.log"
+        formatter: simple
+        class: logging.handlers.RotatingFileHandler
+        maxBytes: 15728640
+root:
+    level: DEBUG
+    handlers: [console, file_handler]

@@ -1,0 +1,132 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$ZgFRH6UCj33ZPRdAXWP0FR$MkY0hMMZpTgrAGecnyZuSthjsfFr12IZi8xNyogYzo8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user_1",
+    "first_name": "",
+    "last_name": "",
+    "email": "user_1@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-03-11T11:02:21.818Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "piklema.device",
+  "pk": 1,
+  "fields": {
+    "name": "device_1",
+    "user": 1
+  }
+},
+{
+  "model": "piklema.device",
+  "pk": 2,
+  "fields": {
+    "name": "device_2",
+    "user": 1
+  }
+},
+{
+  "model": "piklema.device",
+  "pk": 3,
+  "fields": {
+    "name": "device_3",
+    "user": 1
+  }
+},
+{
+  "model": "piklema.tag",
+  "pk": 1,
+  "fields": {
+    "name": "tag_1",
+    "device": 1,
+    "ratio": 0.5,
+    "min": -150.0,
+    "max": 150.0
+  }
+},
+{
+  "model": "piklema.tag",
+  "pk": 2,
+  "fields": {
+    "name": "tag_2",
+    "device": 1,
+    "ratio": 0.4,
+    "min": -120.0,
+    "max": 120.0
+  }
+},
+{
+  "model": "piklema.tag",
+  "pk": 3,
+  "fields": {
+    "name": "tag_3",
+    "device": 1,
+    "ratio": 0.6,
+    "min": -150.0,
+    "max": 150.0
+  }
+},
+{
+  "model": "piklema.tag",
+  "pk": 4,
+  "fields": {
+    "name": "tag_4",
+    "device": 2,
+    "ratio": 0.7,
+    "min": -190.0,
+    "max": 190.0
+  }
+},
+{
+  "model": "piklema.tag",
+  "pk": 5,
+  "fields": {
+    "name": "tag_5",
+    "device": 2,
+    "ratio": 0.8,
+    "min": -200.0,
+    "max": 200.0
+  }
+},
+{
+  "model": "piklema.tag",
+  "pk": 6,
+  "fields": {
+    "name": "tag_6",
+    "device": 2,
+    "ratio": 0.3,
+    "min": -150.0,
+    "max": 180.0
+  }
+},
+{
+  "model": "piklema.tag",
+  "pk": 7,
+  "fields": {
+    "name": "tag_7",
+    "device": 3,
+    "ratio": 0.5,
+    "min": -200.0,
+    "max": 200.0
+  }
+},
+{
+  "model": "piklema.tag",
+  "pk": 8,
+  "fields": {
+    "name": "tag_8",
+    "device": 3,
+    "ratio": 0.8,
+    "min": -100.0,
+    "max": 100.0
+  }
+}
+]
